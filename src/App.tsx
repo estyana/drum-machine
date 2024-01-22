@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Drum from './Drum'
 import { AudioClip } from './types'
@@ -51,16 +50,10 @@ const audioClips: AudioClip[] = [
   }
 ]
 
+
+
 function App() {
 
-  const playAudioClip = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    const clip = audioClips.find((clip) => clip.keyTrigger === e.key.toUpperCase())
-    if (!clip) return
-    (document.getElementById(clip.keyTrigger) as HTMLAudioElement)?.play().catch(console.error)
-    document.getElementById("drum-" + clip.keyTrigger)?.focus()
-    document.getElementById("display")!.innerText = clip.description
-
-  }
 
   return (
     <div className="container" id="drum-machine">
